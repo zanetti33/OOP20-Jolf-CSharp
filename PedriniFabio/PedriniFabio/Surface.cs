@@ -21,6 +21,23 @@ namespace PedriniFabio
         {
             return this.position;
         }
+
+        public double GetFriction()
+        {
+            return this.friction;
+        }
+
+        public bool Contains(Point2D point)
+        {
+            if(point.GetIntX() >= this.position.GetIntX() && 
+                point.GetIntX() <= (this.position.GetIntX() + this.width) &&
+                point.GetIntY() >= this.position.GetIntY() &&
+                point.GetIntY() <= (this.position.GetIntY() + this.height))
+            {
+                return true;
+            }
+            return false;
+        }
         public void Draw() { }
         public void ApplyConstraintTo() { }
     }
